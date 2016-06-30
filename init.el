@@ -24,12 +24,12 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (load-library "insert-link")
 
-(require 'org)
 ;;Display
 (require 'helm-config)
 (helm-mode 1)
 (require 'cl)
 (require 'multiple-cursors)
+
 ;;;; autocomplete
 (require 'auto-complete-config)
 (ac-config-default)
@@ -47,6 +47,7 @@
 (global-set-key (kbd "C-x C-f") #'helm-find-files)
 (global-set-key (kbd "C-c a") 'org-agenda)
 ;;org-mode
+(require 'org)
 (setq org-log-done 'time)
 (setq org-log-done 'note)
 (setq org-startup-indented t)
@@ -54,6 +55,8 @@
 ;;highlighting
 (add-hook 'emacs-lisp-mode-hook 'highlight-defined-mode)
 (add-hook 'emacs-lisp-mode-hook 'highlight-quoted-mode)
+(add-hook 'lisp-mode-hook 'highlight-defined-mode)
+(add-hook 'lisp-mode-hook 'highlight-quoted-mode)
 
 ;;Theme
 (load-theme 'monokai t)

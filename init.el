@@ -10,7 +10,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages (quote (magit git multiple-cursors helm color-theme)))
-'(menu-bar-mode nil)
+ '(menu-bar-mode nil)
  '(org-agenda-files (quote ("~/todo/projects.org")))
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -51,8 +51,12 @@
 (setq org-log-done 'note)
 (setq org-startup-indented t)
 
+;;highlighting
+(add-hook 'emacs-lisp-mode-hook 'highlight-defined-mode)
+(add-hook 'emacs-lisp-mode-hook 'highlight-quoted-mode)
+
 ;;Theme
-(load-theme 'zenburn t)
+(load-theme 'monokai t)
 
 ;;change current directory
 (setq default-directory "C:/wolverine/")

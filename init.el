@@ -21,10 +21,20 @@
  ;; If there is more than one, they won't work right.
  )
 (setq inhibit-splash-screen t)
-
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+(add-to-list 'default-frame-alist '(font . "Courier new-8"))
+(let ((default-directory  "~/.emacs.d/lisp/"))
+  (normal-top-level-add-subdirs-to-load-path))
 (load-library "insert-link")
+(load-library "visual-basic-mode")
+(load-library "vba-mode")
+(global-visual-line-mode 1)
 
+(require 'epa-file)
+(epa-file-enable)
+;;vbasense
+;;(require 'vbasense)
+;;(vbasense-config-default)
 ;;Display
 (require 'helm-config)
 (helm-mode 1)
